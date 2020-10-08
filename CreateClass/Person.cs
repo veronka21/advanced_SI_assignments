@@ -17,7 +17,7 @@ namespace CreateClass {
         }
 
         public override string ToString() {
-            return $"Person: {Name}, gender: {gender}, birth date: {BirthDate.ToString("yyyy-MM-dd")}";
+            return $"{this.GetType().Name}: {Name}, gender: {gender}, birth date: {BirthDate.ToString("yyyy-MM-dd")}";
         }
     }
 
