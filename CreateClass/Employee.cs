@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CreateClass {
-    class Employee : Person {
+    class Employee : Person, ICloneable {
         public double Salary { get; set; }
         public string Profession { get; set; }
         public Room Room { get; set; }
@@ -23,9 +23,20 @@ namespace CreateClass {
         public override string ToString() {
             return $"{base.ToString()}, salary: {Salary}, profession: {Profession}, room: {getRoomNumber()}";
         }
+
+        public object Clone() {
+            Employee newEmployee = (Employee)this.MemberwiseClone();
+            newEmployee.Room = new Room(Room.RoomNumber);
+            return newEmployee;
+            //return this.MemberwiseClone();
+        }
     }
 
     class Room {
         public int RoomNumber { get; set; }
+
+        public Room(int roomNumber) {
+            RoomNumber = roomNumber;
+        }
     }
 }

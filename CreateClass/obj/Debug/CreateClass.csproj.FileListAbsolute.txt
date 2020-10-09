@@ -1,7 +1,7 @@
-C:\Users\Veronika\source\repos\.dotnet\SI\CreateClass\bin\Debug\CreateClass.exe.config
 C:\Users\Veronika\source\repos\.dotnet\SI\CreateClass\bin\Debug\CreateClass.exe
-C:\Users\Veronika\source\repos\.dotnet\SI\CreateClass\bin\Debug\CreateClass.pdb
+C:\Users\Veronika\source\repos\.dotnet\SI\CreateClass\bin\Debug\CreateClass.exe.config
 C:\Users\Veronika\source\repos\.dotnet\SI\CreateClass\obj\Debug\CreateClass.csprojAssemblyReference.cache
 C:\Users\Veronika\source\repos\.dotnet\SI\CreateClass\obj\Debug\CreateClass.csproj.CoreCompileInputs.cache
 C:\Users\Veronika\source\repos\.dotnet\SI\CreateClass\obj\Debug\CreateClass.exe
 C:\Users\Veronika\source\repos\.dotnet\SI\CreateClass\obj\Debug\CreateClass.pdb
+C:\Users\Veronika\source\repos\.dotnet\SI\CreateClass\bin\Debug\CreateClass.pdb
