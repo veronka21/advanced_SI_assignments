@@ -1,0 +1,15 @@
+C:\Users\Veronika\source\repos\.dotnet\SI\WPF_basics_tutorial\bin\Debug\WPF_basics_tutorial.exe.config
+C:\Users\Veronika\source\repos\.dotnet\SI\WPF_basics_tutorial\bin\Debug\WPF_basics_tutorial.exe
+C:\Users\Veronika\source\repos\.dotnet\SI\WPF_basics_tutorial\bin\Debug\WPF_basics_tutorial.pdb
+C:\Users\Veronika\source\repos\.dotnet\SI\WPF_basics_tutorial\obj\Debug\WPF_basics_tutorial.csprojAssemblyReference.cache
+C:\Users\Veronika\source\repos\.dotnet\SI\WPF_basics_tutorial\obj\Debug\MainWindow.g.cs
+C:\Users\Veronika\source\repos\.dotnet\SI\WPF_basics_tutorial\obj\Debug\App.g.cs
+C:\Users\Veronika\source\repos\.dotnet\SI\WPF_basics_tutorial\obj\Debug\WPF_basics_tutorial_MarkupCompile.cache
+C:\Users\Veronika\source\repos\.dotnet\SI\WPF_basics_tutorial\obj\Debug\WPF_basics_tutorial_MarkupCompile.lref
+C:\Users\Veronika\source\repos\.dotnet\SI\WPF_basics_tutorial\obj\Debug\MainWindow.baml
+C:\Users\Veronika\source\repos\.dotnet\SI\WPF_basics_tutorial\obj\Debug\WPF_basics_tutorial.g.resources
+C:\Users\Veronika\source\repos\.dotnet\SI\WPF_basics_tutorial\obj\Debug\WPF_basics_tutorial.Properties.Resources.resources
+C:\Users\Veronika\source\repos\.dotnet\SI\WPF_basics_tutorial\obj\Debug\WPF_basics_tutorial.csproj.GenerateResource.cache
+C:\Users\Veronika\source\repos\.dotnet\SI\WPF_basics_tutorial\obj\Debug\WPF_basics_tutorial.csproj.CoreCompileInputs.cache
+C:\Users\Veronika\source\repos\.dotnet\SI\WPF_basics_tutorial\obj\Debug\WPF_basics_tutorial.exe
+C:\Users\Veronika\source\repos\.dotnet\SI\WPF_basics_tutorial\obj\Debug\WPF_basics_tutorial.pdb
