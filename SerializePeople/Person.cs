@@ -15,10 +15,15 @@ namespace SerializePeople {
             Name = name;
             BirthDate = birthDate;
             this.gender = gender;
+            SetAge();
         }
 
         public override string ToString() {
             return $"{this.GetType().Name}: {Name}, gender: {gender}, birth date: {BirthDate.ToString("yyyy-MM-dd")}";
+        }
+
+        public void SetAge() {
+            Age = DateTime.Today.Year - BirthDate.Year;
         }
     }
 
