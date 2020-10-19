@@ -1,7 +1,0 @@
-C:\Users\Veronika\source\repos\.dotnet\SI\SortString\bin\Debug\SortString.exe.config
-C:\Users\Veronika\source\repos\.dotnet\SI\SortString\bin\Debug\SortString.exe
-C:\Users\Veronika\source\repos\.dotnet\SI\SortString\bin\Debug\SortString.pdb
-C:\Users\Veronika\source\repos\.dotnet\SI\SortString\obj\Debug\SortString.csprojAssemblyReference.cache
-C:\Users\Veronika\source\repos\.dotnet\SI\SortString\obj\Debug\SortString.csproj.CoreCompileInputs.cache
-C:\Users\Veronika\source\repos\.dotnet\SI\SortString\obj\Debug\SortString.exe
-C:\Users\Veronika\source\repos\.dotnet\SI\SortString\obj\Debug\SortString.pdb
