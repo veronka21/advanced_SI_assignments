@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace SerializePeople {
     [Serializable()]
@@ -27,6 +29,14 @@ namespace SerializePeople {
         public void SetAge() {
             Age = DateTime.Today.Year - BirthDate.Year;
         }
+
+        public void Serialize(string output) {
+            Stream stream = File.Open(output, FileMode.Create);
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            binaryFormatter.Serialize(stream, this);
+        }
+
+
     }
 
     enum Genders {
