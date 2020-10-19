@@ -9,10 +9,10 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace SerializePeople {
     [Serializable()]
-    class Person : IDeserializationCallback {
+    class Person : IDeserializationCallback, ISerializable {
         public string Name { get; set; }
         public DateTime BirthDate { get; set; }
-        Genders gender { get; set; }
+        Genders Gender { get; set; }
         [NonSerialized]
         private int _age;
         public int Age { get { return _age; } set { _age = value; } }
@@ -20,7 +20,7 @@ namespace SerializePeople {
         public Person(string name, DateTime birthDate, Genders gender) {
             Name = name;
             BirthDate = birthDate;
-            this.gender = gender;
+            this.Gender = gender;
             SetAge();
         }
 
@@ -28,7 +28,7 @@ namespace SerializePeople {
         }
 
         public override string ToString() {
-            return $"{this.GetType().Name}: {Name}, gender: {gender}, birth date: {BirthDate.ToString("yyyy-MM-dd")}, age: {Age}";
+            return $"{this.GetType().Name}: {Name}, gender: {Gender}, birth date: {BirthDate.ToString("yyyy-MM-dd")}, age: {Age}";
         }
 
         public void SetAge() {
@@ -54,6 +54,18 @@ namespace SerializePeople {
 
         public void OnDeserialization(object sender) {
             SetAge();
+        }
+
+        public void GetObjectData(SerializationInfo info, StreamingContext context) {
+            //info.AddValue("name", Name);
+            info.AddValue("birthDate", BirthDate);
+            info.AddValue("gender", Gender);
+        }
+
+        public Person(SerializationInfo info, StreamingContext context) {
+            //Name = (string)info.GetValue("name", typeof(string));
+            BirthDate = (DateTime)info.GetValue("birthDate", typeof(DateTime));
+            Gender = (Genders)info.GetValue("gender", typeof(Genders));
         }
     }
 
