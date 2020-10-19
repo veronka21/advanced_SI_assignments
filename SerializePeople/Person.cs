@@ -22,6 +22,9 @@ namespace SerializePeople {
             SetAge();
         }
 
+        public Person() {
+        }
+
         public override string ToString() {
             return $"{this.GetType().Name}: {Name}, gender: {gender}, birth date: {BirthDate.ToString("yyyy-MM-dd")}";
         }
@@ -34,6 +37,17 @@ namespace SerializePeople {
             Stream stream = File.Open(output, FileMode.Create);
             BinaryFormatter binaryFormatter = new BinaryFormatter();
             binaryFormatter.Serialize(stream, this);
+            stream.Close();
+        }
+
+        public static Person Deserialize(string file) {
+            Person person = new Person();
+            Stream stream = File.Open(file, FileMode.Open);
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            object objectFromFile = binaryFormatter.Deserialize(stream);
+            person = (Person)objectFromFile;
+            stream.Close();
+            return person;
         }
 
 
