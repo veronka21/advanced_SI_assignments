@@ -5,6 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SerializePeople {
-    class Class1 {
+    class Person {
+        public string Name { get; set; }
+        public DateTime BirthDate { get; set; }
+        Genders gender { get; set; }
+        public int Age { get; set; }
+
+        public Person(string name, DateTime birthDate, Genders gender) {
+            Name = name;
+            BirthDate = birthDate;
+            this.gender = gender;
+        }
+
+        public override string ToString() {
+            return $"{this.GetType().Name}: {Name}, gender: {gender}, birth date: {BirthDate.ToString("yyyy-MM-dd")}";
+        }
+    }
+
+    enum Genders {
+        Male, Female
     }
 }
