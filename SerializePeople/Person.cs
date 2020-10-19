@@ -9,7 +9,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace SerializePeople {
     [Serializable()]
-    class Person {
+    class Person : IDeserializationCallback {
         public string Name { get; set; }
         public DateTime BirthDate { get; set; }
         Genders gender { get; set; }
@@ -52,7 +52,9 @@ namespace SerializePeople {
             return person;
         }
 
-
+        public void OnDeserialization(object sender) {
+            SetAge();
+        }
     }
 
     enum Genders {
