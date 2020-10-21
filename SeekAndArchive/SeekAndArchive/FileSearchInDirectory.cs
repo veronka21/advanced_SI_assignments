@@ -28,13 +28,14 @@ namespace SeekAndArchive
                     SearchForGivenFile(files, fileName, ref foundFiles);
                 } catch(UnauthorizedAccessException e)
                 {
-                    //Console.WriteLine(e);
+                    Console.WriteLine(e);
                 }
                 catch(DirectoryNotFoundException e)
                 {
-
+                    Console.WriteLine(e);
                 }
-                catch(Exception e) { 
+                catch(Exception e) {
+                    Console.WriteLine(e);
                 }
             }
 
