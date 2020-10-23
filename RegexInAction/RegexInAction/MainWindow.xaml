@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegexInAction"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Input Validator" Height="250" Width="400" Background="#D3D3D3">
+    <Border Padding="10">
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5*"  />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition  />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" VerticalAlignment="Center">Name</Label>
+                <TextBox x:Name="txtName" Grid.Column="1" Grid.Row="0"  Padding="5" Margin="0 10" />
+
+                <Label Grid.Column="0" Grid.Row="1" VerticalAlignment="Center">Phone</Label>
+                <TextBox x:Name="txtPhone" Grid.Column="1" Grid.Row="1" Padding="5" Margin="0 10"  />
+
+                <Label Grid.Column="0" Grid.Row="2" VerticalAlignment="Center">E-mail</Label>
+                <TextBox x:Name="txtEmail" Grid.Column="1" Grid.Row="2"  Padding="5" Margin="0 10 0 20"  />
+            </Grid>
+
+            <Button x:Name="btnSave" Width="120" HorizontalAlignment="Right" Click="btnSave_Click">Save</Button>
+
+        </StackPanel>
+    </Border>
 </Window>
