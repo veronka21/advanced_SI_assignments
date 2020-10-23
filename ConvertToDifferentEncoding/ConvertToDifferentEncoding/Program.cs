@@ -10,6 +10,8 @@ namespace ConvertToDifferentEncoding
     {
         static void Main(string[] args)
         {
+            FileHandler fileHandler = new FileHandler();
+            fileHandler.WriteToFile();
         }
     }
 }
