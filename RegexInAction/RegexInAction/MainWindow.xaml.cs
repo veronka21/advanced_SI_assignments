@@ -49,6 +49,7 @@ namespace RegexInAction
             }
             if (successfulSave)
             {
+                txtPhone.Text = InputValidators.ReformatPhone(phoneNumber);
                 MessageBox.Show("Your data was successfully saved!");
             }
         }
@@ -75,6 +76,14 @@ namespace RegexInAction
             string emailRegex = "^[A-Za-z\\d._-]+@[A-Za-z\\d]+[.][A-Za-z]{2,3}$";
             bool isValid = Regex.IsMatch(email, emailRegex);
             return isValid;
+        }
+
+        public static string ReformatPhone(string phoneNumber)
+        {
+            string newPhoneFormat = @"(\d{4})(\d{3})(\d{4})";
+            //string formattedPhoneNumber = Regex.Replace(phoneNumber, newPhoneFormat, "($1) $2-$3");
+            string formattedPhoneNumber = Regex.Replace(phoneNumber, newPhoneFormat, "($1) $2-$3");
+            return formattedPhoneNumber;
         }
     }
 }
