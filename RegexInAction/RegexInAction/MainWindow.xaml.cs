@@ -81,7 +81,6 @@ namespace RegexInAction
         public static string ReformatPhone(string phoneNumber)
         {
             string newPhoneFormat = @"(\d{4})(\d{3})(\d{4})";
-            //string formattedPhoneNumber = Regex.Replace(phoneNumber, newPhoneFormat, "($1) $2-$3");
             string formattedPhoneNumber = Regex.Replace(phoneNumber, newPhoneFormat, "($1) $2-$3");
             return formattedPhoneNumber;
         }
