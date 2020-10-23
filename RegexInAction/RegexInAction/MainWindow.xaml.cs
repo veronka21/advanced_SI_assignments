@@ -26,23 +26,23 @@ namespace RegexInAction
             InitializeComponent();
         }
 
-        private void btnSave_Click(object sender, RoutedEventArgs e)
+        private void BtnSaveClick(object sender, RoutedEventArgs e)
         {
             string name = txtName.Text;
             string phoneNumber = txtPhone.Text;
             string email = txtEmail.Text;
             bool successfulSave = true;
-            if (!isValidName(name))
+            if (!InputValidators.IsValidName(name))
             {
                 MessageBox.Show("The name is invalid (only alphabetical characters are allowed)");
                 successfulSave = false;
             }
-            if (!isValidPhoneNumber(phoneNumber))
+            if (!InputValidators.IsValidPhoneNumber(phoneNumber))
             {
                 MessageBox.Show("The given phone number is not valid (please enter a mobile number without spaces, e.g. 06201234567)");
                 successfulSave = false;
             }
-            if (!isValidEmailAddress(email))
+            if (!InputValidators.IsValidEmailAddress(email))
             {
                 MessageBox.Show("The given email address is not valid (please enter a valid format, e.g. example@xyz.com)");
                 successfulSave = false;
@@ -52,24 +52,27 @@ namespace RegexInAction
                 MessageBox.Show("Your data was successfully saved!");
             }
         }
+    }
 
-        private bool isValidName(string name)
+    public class InputValidators
+    {
+        public static bool IsValidName(string name)
         {
             string nameRegex = "^[A-Za-z]+\\s[A-Za-z]+\\s*[A-Za-z]*$";
             bool isValid = Regex.IsMatch(name, nameRegex);
             return isValid;   
         }
 
-        private bool isValidPhoneNumber(string phoneNumber)
+        public static bool IsValidPhoneNumber(string phoneNumber)
         {
             string phoneRegex = "^06\\d{9}$";
             bool isValid = Regex.IsMatch(phoneNumber, phoneRegex);
             return isValid;
         }
 
-        private bool isValidEmailAddress(string email)
+        public static bool IsValidEmailAddress(string email)
         {
-            string emailRegex = "^[A-Za-z\\d]+@[A-Za-z\\d]+[.][A-Za-z]{2,3}$";
+            string emailRegex = "^[A-Za-z\\d._-]+@[A-Za-z\\d]+[.][A-Za-z]{2,3}$";
             bool isValid = Regex.IsMatch(email, emailRegex);
             return isValid;
         }
