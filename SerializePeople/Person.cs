@@ -9,10 +9,10 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace SerializePeople {
     [Serializable()]
-    class Person : IDeserializationCallback, ISerializable {
+    public class Person : IDeserializationCallback, ISerializable {
         public string Name { get; set; }
         public DateTime BirthDate { get; set; }
-        Genders Gender { get; set; }
+        public Genders Gender { get; set; }
         [NonSerialized]
         private int _age;
         public int Age { get { return _age; } set { _age = value; } }
@@ -57,19 +57,40 @@ namespace SerializePeople {
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context) {
-            //info.AddValue("name", Name);
+            info.AddValue("name", Name);
             info.AddValue("birthDate", BirthDate);
             info.AddValue("gender", Gender);
         }
 
+        public override bool Equals(object obj)
+        {
+            return obj is Person person &&
+                   Name == person.Name &&
+                   BirthDate == person.BirthDate &&
+                   Gender == person.Gender &&
+                   _age == person._age &&
+                   Age == person.Age;
+        }
+
+        public override int GetHashCode()
+        {
+            int hashCode = -764446635;
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Name);
+            hashCode = hashCode * -1521134295 + BirthDate.GetHashCode();
+            hashCode = hashCode * -1521134295 + Gender.GetHashCode();
+            hashCode = hashCode * -1521134295 + _age.GetHashCode();
+            hashCode = hashCode * -1521134295 + Age.GetHashCode();
+            return hashCode;
+        }
+
         public Person(SerializationInfo info, StreamingContext context) {
-            //Name = (string)info.GetValue("name", typeof(string));
+            Name = (string)info.GetValue("name", typeof(string));
             BirthDate = (DateTime)info.GetValue("birthDate", typeof(DateTime));
             Gender = (Genders)info.GetValue("gender", typeof(Genders));
         }
     }
 
-    enum Genders {
+    public enum Genders {
         Male, Female
     }
 }
