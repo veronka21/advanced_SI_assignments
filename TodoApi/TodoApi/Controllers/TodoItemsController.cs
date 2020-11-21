@@ -9,7 +9,7 @@ using TodoApi.Models;
 
 namespace TodoApi.Controllers
 {
-    [Route("api/TodoItems")]
+    [Route("api/todos")]
     [ApiController]
     public class TodoItemsController : ControllerBase
     {
@@ -20,7 +20,7 @@ namespace TodoApi.Controllers
             _context = context;
         }
 
-        // GET: api/TodoItems
+        // GET: api/todos
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoItemDTO>>> GetTodoItems()
         {
