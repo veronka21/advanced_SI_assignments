@@ -70,6 +70,28 @@ namespace TodoApi.Controllers
             return NoContent();
         }
 
+        [HttpPut("{id}/toggle")]
+        public async Task<IActionResult> UpdateTodoItemIsCompleteState(long id)
+        {
+            var todoItem = await _context.TodoItems.FindAsync(id);
+            if (todoItem == null)
+            {
+                return NotFound();
+            }
+
+            todoItem.IsComplete = !todoItem.IsComplete;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            } catch (DbUpdateConcurrencyException) when (!TodoItemExists(id))
+            {
+                return NotFound();
+            }
+
+            return NoContent();
+        }
+
         [HttpPost]
         public async Task<ActionResult<TodoItemDTO>> CreateTodoItem(TodoItemDTO todoItemDTO)
         {
