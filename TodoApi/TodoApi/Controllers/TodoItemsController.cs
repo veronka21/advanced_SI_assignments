@@ -126,6 +126,21 @@ namespace TodoApi.Controllers
             return NoContent();
         }
 
+        [HttpDelete("completed")]
+        public async Task<IActionResult> DeleteAllCompletedTodoItem()
+        {
+            foreach (var item in _context.TodoItems)
+            {
+                if (item.IsComplete)
+                {
+                    _context.TodoItems.Remove(item);
+                }
+            }
+           await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
         private bool TodoItemExists(long id) =>
              _context.TodoItems.Any(e => e.Id == id);
 
