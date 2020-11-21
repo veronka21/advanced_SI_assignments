@@ -92,6 +92,19 @@ namespace TodoApi.Controllers
             return NoContent();
         }
 
+        [HttpPut("toggle-all")]
+        public async Task<IActionResult> ToggleAllTodoItemIsCompleteState([FromQuery]bool completed)
+        {
+            foreach (var item in _context.TodoItems)
+            {
+                if (item.IsComplete != completed) item.IsComplete = completed;
+            }
+
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
         [HttpPost]
         public async Task<ActionResult<TodoItemDTO>> CreateTodoItem(TodoItemDTO todoItemDTO)
         {
