@@ -20,7 +20,6 @@ namespace Instrumentation
                               EventLogEntryType.Information,
                               234,
                               Convert.ToInt16(3));
-            EventLog log = new EventLog("Security");
             var entries = logDemo.Entries.Cast<EventLogEntry>()
                                      .Where(x => x.Source == "Demo")
                                      .Select(x => new
