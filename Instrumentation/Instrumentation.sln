@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Instrumentation", "Instrume
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Instrumentation2", "Instrumentation2\Instrumentation2.csproj", "{D31A99F8-69B8-4C1F-A9AB-BF3E3BF6DFF9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerformanceCounterDemo", "PerformanceCounterDemo\PerformanceCounterDemo.csproj", "{8F37231A-E444-47B0-9229-F053DC128836}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D31A99F8-69B8-4C1F-A9AB-BF3E3BF6DFF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D31A99F8-69B8-4C1F-A9AB-BF3E3BF6DFF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D31A99F8-69B8-4C1F-A9AB-BF3E3BF6DFF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F37231A-E444-47B0-9229-F053DC128836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F37231A-E444-47B0-9229-F053DC128836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F37231A-E444-47B0-9229-F053DC128836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F37231A-E444-47B0-9229-F053DC128836}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
